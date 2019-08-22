@@ -5,8 +5,10 @@ const config = require('./utils/config');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+
 const app = express();
-const router = express.Router();
+var product = require('./routes/product');
+var supplier = require('./routes/suppliersRouter');
 
 const mongoose =require('mongoose');
 mongoose.connect('mongodb+srv://Phi-Nguyen:123@cluster1-0toue.mongodb.net/test?retryWrites=true')
@@ -15,9 +17,10 @@ mongoose.connection.once('open', () => {
 })
 
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use('/products', product);
+app.use('/supplier',supplier);
 
 let port = process.env.PORT || 3000;
 
