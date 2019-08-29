@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var foodController = require("../controllers/foodController");
+var newsController = require("../controllers/newsController");
 
 const controllerHandler = (promise, params) => async (req, res, next) => {
   const boundParams = params ? params(req, res, next) : [];
@@ -13,7 +13,6 @@ const controllerHandler = (promise, params) => async (req, res, next) => {
 };
 const c = controllerHandler;
 
-router.get("/getFood", c(foodController.getFoods));
-router.get("/createFood", foodController.createFoods);
+router.get("/getNews", c(newsController.getNewsList));
 
 module.exports = router;

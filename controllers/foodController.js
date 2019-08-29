@@ -1,8 +1,10 @@
-var getFoodServices = require('../services/foodServices')
+let FoodServices = require("../services/FoodServices");
 
 module.exports = {
   getFoods() {
-    return getFoodServices.module.getFoods();
+    return FoodServices.module.getFoods();
+  },
+  createFoods(req, res) {
+    return FoodServices.module.createFoods(req, res);
   }
 };
-

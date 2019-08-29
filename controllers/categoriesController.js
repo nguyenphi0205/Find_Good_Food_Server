@@ -1,7 +1,10 @@
-var getCategoriesServices = require('../services/CategoriesServices')
+let CategoriesServices = require('../services/CategoriesServices')
 
 module.exports = {
   getCategories() {
-    return getCategoriesServices.module.getCategories();
+    return CategoriesServices.module.getCategories();
+  },
+  createCategories(req, res) {
+    return CategoriesServices.module.createCategories(req, res);
   }
 };

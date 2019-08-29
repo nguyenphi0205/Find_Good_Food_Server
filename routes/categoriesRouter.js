@@ -14,5 +14,5 @@ const controllerHandler = (promise, params) => async (req, res, next) => {
 const c = controllerHandler;
 
 router.get("/getCate", c(categoryController.getCategories));
-
+router.post("/createCate", categoryController.createCategories);
 module.exports = router;

@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var foodController = require("../controllers/foodController");
+
+var shipperController = require("../controllers/shipperController");
 
 const controllerHandler = (promise, params) => async (req, res, next) => {
   const boundParams = params ? params(req, res, next) : [];
@@ -12,8 +13,6 @@ const controllerHandler = (promise, params) => async (req, res, next) => {
   }
 };
 const c = controllerHandler;
-
-router.get("/getFood", c(foodController.getFoods));
-router.get("/createFood", foodController.createFoods);
+router.get("/getShipper", c(shipperController.getShipperList));
 
 module.exports = router;
