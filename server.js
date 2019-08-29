@@ -14,6 +14,7 @@ var category = require("./routes/categoriesRouter");
 var food = require("./routes/foodRouter");
 var shipper = require("./routes/shipperRouter");
 var news = require("./routes/newsRouter");
+var users = require("./routes/userRouter");
 
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -31,6 +32,7 @@ app.use("/categories", category);
 app.use("/foods", food);
 app.use("/shippers", shipper);
 app.use("/news", news);
+app.use("/users", users);
 
 let port = process.env.PORT || 3000;
 
