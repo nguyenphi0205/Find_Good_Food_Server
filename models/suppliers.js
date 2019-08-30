@@ -17,6 +17,10 @@ let supplierSchema = mongoose.Schema(
     TypeGoods: String,
     Logo: String,
     ActiveSupplier: Boolean,
+    CreateDate: {
+      type:Date
+    },
+
     foods: [
       {
         _id: false,

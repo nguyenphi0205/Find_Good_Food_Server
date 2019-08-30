@@ -1,7 +1,6 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-
-var supplierController = require('../controllers/suppliersController');
+var paymentController = require("../controllers/paymentController");
 
 const controllerHandler = (promise, params) => async (req, res, next) => {
   const boundParams = params ? params(req, res, next) : [];
@@ -13,9 +12,7 @@ const controllerHandler = (promise, params) => async (req, res, next) => {
   }
 };
 const c = controllerHandler;
-router.get('/getSuppliers', c(supplierController.getSuppliers));
-router.post('/createSuppliers',supplierController.createSuppliers);
 
-
+router.get("/getPayments", c(paymentController.getPaymentList));
 
 module.exports = router;

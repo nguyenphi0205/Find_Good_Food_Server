@@ -11,6 +11,9 @@ let categorySchema = mongoose.Schema(
     Active: {
       type: Boolean
     },
+    CreateDate: {
+      type: Date
+    },
     foods: [
       {
         _id: false,
