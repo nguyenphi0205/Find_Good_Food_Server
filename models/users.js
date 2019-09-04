@@ -69,6 +69,9 @@ let userSchema = mongoose.Schema({
   },
   Active: {
     type: Boolean
+  },
+  isAdmin: {
+    type: Number
   }
 });
 

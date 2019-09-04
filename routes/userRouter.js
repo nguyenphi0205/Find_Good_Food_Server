@@ -14,5 +14,5 @@ const controllerHandler = (promise, params) => async (req, res, next) => {
 const c = controllerHandler;
 
 router.get("/getUser", c(userController.getUserList));
-
+router.post("/register",userController.createuser);
 module.exports = router;
