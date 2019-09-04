@@ -4,4 +4,5 @@ exports.module = {
   getNewsList() {
     return DataModel.new.find().exec();
   },
+  
 };
